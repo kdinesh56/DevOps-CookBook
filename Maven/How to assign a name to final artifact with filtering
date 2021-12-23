@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fresco.play</groupId>
+  <artifactId>maven-profile-env</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>maven-plugin-exec</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- Insert dependencies here -->
+    <dependencies>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+
+  <build>
+     <!--  Configure Resource filtering here -->
+    <finalName>${project.artifactId}</finalName>
+        <filters>
+            <filter>src/main/resources/db.properties</filter>
+        </filters>
+        <resources>
+          <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+          </resource>
+        </resources>
+
+     <!--  Configure Plugins here -->
+            <plugins>
+          <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                  <configuration>
+                    <mainClass>com.fresco.play.App</mainClass>
+                  </configuration>
+            </plugin>
+        </plugins>
+
+  </build>
+
+  <profiles>
+      <!-- Configure Profiles here -->
+          <profile>
+       <id>dev</id>
+        <properties>
+            <db.env>DEV</db.env>
+            <db.username>devuser</db.username>
+            <db.password>devpwd</db.password>
+            <db.url>jdbc:mysql://localhost:3306/dev</db.url>
+            <jar.finalName>maven-${db.env}-profile</jar.finalName>
+        </properties>
+
+      <activation>
+        <property>
+          <name>!skipDefault</name>
+        </property>
+    </activation>
+
+    </profile>
+
+    <profile>
+        <id>qa</id>
+        <properties>
+            <db.env>QA</db.env>
+            <db.username>qauser</db.username>
+            <db.password>qapwd</db.password>
+            <db.url>jdbc:mysql://serv01:3306/qa</db.url>
+            <jar.finalName>maven-${db.env}-profile</jar.finalName>
+        </properties>
+    </profile>
+
+    <profile>
+        <id>prod</id>
+        <properties>
+            <db.env>PROD</db.env>
+            <db.username>produser</db.username>
+            <db.password>******</db.password>
+            <db.url>jdbc:mysql://live01:3306/prod</db.url>
+            <jar.finalName>maven-${db.env}-profile</jar.finalName>
+        </properties>
+    </profile>
+  </profiles>
+
+</project>
