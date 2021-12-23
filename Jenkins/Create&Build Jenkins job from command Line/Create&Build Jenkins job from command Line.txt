@@ -1,0 +1,12 @@
+This is to explain how to create and Build a Jenkins job using Jenkins CLI
+
+Create command
+--------------
+java -jar jenkins-cli.jar -s JENKINS URL TO BE ENTERED -webSocket -auth admin:7300a8e7f20d403ab3f35babe75eda07 create-job Jenkins_cli<config.xml
+
+
+Build command
+-------------
+java -jar jenkins-cli.jar -s JENKINS URL TO BE ENTERED -webSocket -auth admin:7300a8e7f20d403ab3f35babe75eda07 build Jenkins_cli
+
+

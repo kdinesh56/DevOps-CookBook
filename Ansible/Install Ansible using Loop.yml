@@ -1,0 +1,12 @@
+
+- hosts: 10.160.0.8
+  tasks:
+    - name: Ansible installation
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - git
+   become: true
+   
+   

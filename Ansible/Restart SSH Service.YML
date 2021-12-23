@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: Check if Service Exists
+    stat: path=/etc/init.d/ssh
+    register: service_status
+  - name: Stop Service
+    service: name=ssh state=stopped
+    when: service_status.stat.exists
+    register: service_stopped
+  - name: Start Service
+    service: name=ssh state=started
+    when: service_status.stat.exists
+    register: service_stopped
+	

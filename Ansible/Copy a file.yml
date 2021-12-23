@@ -1,0 +1,14 @@
+ansible localhost -i /etc/ansible/hosts -m file -a "dest=/home/user/test mode=644 state=directory
+
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: check destination
+    stat:
+     path: /home/user/test/simplefile.txt
+    register: p
+  - name:  copy file if not exists
+    command: mv /home/user/simplefile.txt /home/user/test/simplefile.txt
+    when: p.stat.exists == False

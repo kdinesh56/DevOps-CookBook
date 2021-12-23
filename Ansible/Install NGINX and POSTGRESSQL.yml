@@ -1,0 +1,33 @@
+---
+#installing nginx and postgresql
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: Install nginx
+  hosts: all
+
+  become: true
+
+  tasks:
+  - shell: apt-get upgrade -y; apt-get update
+
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: latest
+
+  - name: Start NGiNX
+    service:
+      name: nginx
+      state: started
+
+  - name: Install PostgreSQL
+    apt:
+      name: postgresql
+      state: latest
+
+  - name: Start PostgreSQL
+    service:
+      name: postgresql
+      state: started

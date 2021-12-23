@@ -1,0 +1,13 @@
+services:
+     web:
+        image: “kdinesh56/simple-webapp"
+     database:
+        image: “mongodb"
+    messaging:
+        image: "redis:alpine"
+    orchestration:
+        image: “ansible"
+        
+        
+
+docker compose up

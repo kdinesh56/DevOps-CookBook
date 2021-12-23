@@ -1,0 +1,6 @@
+
+Run on the SWARM Manager Node (Or the one node which you wanted to be SWARM Manager)
+docker swarm init
+
+Run on the worker nodes - to link to the SWARM Manager
+docker swarm join --token <token>

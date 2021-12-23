@@ -1,0 +1,29 @@
+services:
+     web:
+        image: “kdinesh56/simple-webapp"
+     database:
+        image: “mongodb"
+    messaging:
+        image: "redis:alpine"
+    orchestration:
+        image: “ansible"
+        
+        
+
+docker compose up
+The above command will create a container and deploy in a single node
+as it doesnot have the capability to scale across multiple nodes
+in SWARM
+
+
+But docker STACK has the ability to deploy in multiple nodes as per the
+scale configuration
+
+Docker stack deploy --compose-file docker-compose.yml dineshstack1
+
+
+
+To scale a service use either of below commands
+
+ docker service scale dineshservice1=50
+ docker service update --replicas=50 dineshservice1
