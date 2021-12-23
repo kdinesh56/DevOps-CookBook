@@ -1,0 +1,67 @@
+    1  git --version
+    2  pwd
+    3  mkdir go
+    4  cd go/
+    5  pwd
+    6  cd ..
+    7  clear
+    8  pwd
+    9  git init go
+   10  git status
+   11  cd go/
+   12  git status
+   13  git commit -m "first file"
+   14  git status
+   15  git add -A
+   16  git commit -m "first file"
+   17  git status
+   18  git remote add origin git@52.234.210.3:linuxways.git
+   19  pit push origin
+   20  git push origin
+   21  git push --origin
+   22  git push
+   23  git push --set-upstream origin master
+   24  cd ~/go
+   25  cd ~/.ssh
+   26  ssh -T git@52.234.210.3
+   27  ssh -T git@52.234.210.3
+   28  AAAAB3NzaC1yc2EAAAADAQABAAABgQChJoiVAlVONpVwYqr1ZgXpFiQvmEC5mR0K8fdCghylq1lYgNj9vdAN9j5+O4Hsd1azeYDssM0JG/wtNGz8tfpRknp2lv5Zw6pZ6fIUHeGlOuYSHVBxTd+HC7RkcLJgzWBz+EHh+bbFLFYVSfsrXatG3Iuim2V72k6F/1PtTIb1MmH0Wra7IDIMZ1YA/xAXg31dfPlp2Jq/rKTDbE4P93c8j71zdDpgUy41PwoYbSSw8qMrV+O0pYaSKTLj0YoMvNhw72l0dDHbrnFi6MDzIra/BHzfs8N8RCLFCx5xlWPj2EGwpKghHGQDuwdKUVzEQqgUdR6yqmH/Y61BuLaitdAOL4F1wuHtrdi5ZlUIk/nfbp8FP9qPZ/n1tSLMbWULFManysCVO768iveFxTH0K6mpEJmit4C6tPSzxRrsNijWgWkHGBkDnhyGPGg0TDKk34ilTL6rhqVRHkx9MYGBiUBdp8yw9ZAw4AqpJ89veTFTGb5wu6t1N9vPwKYzPc0Ae3E=
+   29  cd ~/.ssh
+   30  ssh-keygen
+   31  cat ~/.ssh/id_rsa.pub
+   32  ssh -T git@52.234.210.3
+   33  git push
+   34  cd go
+   35  cd ..
+   36  cd go/
+   37  git push
+   38  git push --set-upstream origin master
+   39  ls
+   40  git clone git@52.234.210.3:linuxways.git go1
+   41  cd go1/
+   42  ls -lrta
+   43  git log --oneline
+   44  git log 
+   45  history 
+   46  history >> commands-gitclient.txt
+   47  exit
+   48  git --version
+   49  exit
+   50  git init
+   51  git status
+   52  git add .
+   53  git status
+   54  git commit -m "First set of Upload"
+   55  git remote add origin https://github.com/kdinesh56/DevOps-CookBook
+   56  git push origin master
+   57  git merge man
+   58  git merge main master
+   59  git merge --help
+   60  git merge
+   61  git push origin main
+   62  git checkout master
+   63  git checkout master
+   64  git branch main master -f
+   65  git checkout main 
+   66  git push origin main -f
+   67  history > out1.txt

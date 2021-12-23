@@ -1,0 +1,27 @@
+First do the init
+	git init
+
+To view the list if unstaged files
+	git status
+	
+Add the files to staging
+	git add
+	
+To verify whether all the files are staged
+	git status
+
+Commit the staged files with appropriate commit description
+	git commit -m "First set of Upload"
+	
+Then push the changes to Remote repository
+	git remote add origin https://github.com/kdinesh56/DevOps-CookBook
+	
+Merge the branch with master
+	git push origin master
+
+After the above steps if you see the message "There isn’t anything to compare. main and master are entirely different commit histories." then follow the below steps to merge main and master
+
+	git checkout master  
+	git branch main master -f    
+	git checkout main  
+	git push origin main -f
